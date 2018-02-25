@@ -34,7 +34,7 @@ class CreatePostView(LoginRequiredMixin, CreateView):
     model = Post
 
 
-class PostUpdateView(LoginRequiredMixin, CreateView):
+class PostUpdateView(LoginRequiredMixin, UpdateView):
     login_url = '/login/'
     redirect_field_name = 'blog/post_detail.html'
     form_class = PostForm
@@ -69,9 +69,9 @@ def add_comment_to_post(request, pk):
             comment.post = post
             comment.save()
             return redirect('post_detail', pk=post.pk)
-        else:
-            form = CommentForm()
-        return render(request, 'blog/comment_form.html', {'form': form})
+    else:
+        form = CommentForm()
+    return render(request, 'blog/comment_form.html', {'form': form})
 
 
 @login_required
@@ -93,7 +93,7 @@ def comment_remove(request, pk):
 def post_publish(request, pk):
     post = get_object_or_404(Post, pk=pk)
     post.publish()
-    redirect('post_detail', pk=pk)
+    return redirect('post_detail', pk=pk)
 
 
 

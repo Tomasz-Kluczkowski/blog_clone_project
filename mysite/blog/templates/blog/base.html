@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <title>Blog</title>
     {#    Bootstrap #}
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     {# Medium style editor #}
     <script src="//cdn.jsdelivr.net/npm/medium-editor@latest/dist/js/medium-editor.min.js"></script>
@@ -44,7 +45,7 @@
                     </li>
                 {% else %}
                     <li>
-                        <a class="nav navbar-right" href="{% url 'login' %}"><span class="glyphicon glyphicon-user"</a>
+                        <a class="nav navbar-right" href="{% url 'login' %}"><span class="glyphicon glyphicon-user">Login</span></a>
                     </li>
 
                 {% endif %}
